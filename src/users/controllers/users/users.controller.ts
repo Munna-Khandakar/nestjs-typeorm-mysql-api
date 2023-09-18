@@ -27,7 +27,7 @@ export class UsersController {
   }
 
   @Put(':id')
-  updateuserById(
+  updateUserById(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateUserDto: UpdateUserDto,
   ) {
@@ -44,6 +44,6 @@ export class UsersController {
     @Param('id', ParseIntPipe) id: number,
     @Body() createUserProfileDto: CreateUserProfileDto,
   ) {
-    return this.userService.createUserProfile(createUserProfileDto);
+    return this.userService.createUserProfile(id, createUserProfileDto);
   }
 }
